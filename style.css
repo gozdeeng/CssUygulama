@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: "Lato", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+    font-family: Montserrat;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+section{
+      
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    text-align: center;
+}
+
+.btn{
+   margin-top: 2rem;
+   font-size: 2rem;
+   padding: 2.2rem 1.6rem;
+   font-weight: 400;
+   display: inline-block;
+   background-color: transparent;
+   border: 2px solid #FAB301;
+   border-radius: .4rem;
+ 
+   /*idk?*/
+   cursor: pointer;
+   transition: .5s;
+}
+.btn-outline{
+   color:#FAB301 ;
+}
+
+.btn:hover{
+   background-color: #FAB301;
+   color: #221F20;
+
+}
+
+.img-fluid{
+    max-width: 432px;
+    height: auto;
+}
+/* bos bir eleman olusturarak temizleme yapiyor */
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+
+}
+.container{
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.text-uppercase{
+    text-transform: uppercase;
+}
+/*Navbar*/
+ nav{
+    width: 100%;
+    position: fixed;
+    font-family: Montserrat;
+    /* colorzilla ile aldik */
+    background-color: #FCF7F2;
+    color:#221F20;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    z-index: 500;
+
+ }
+ #logo-box{
+    float: left;
+    padding-top: 0.5rem;
+ }
+ #logo-box .logo{
+    color: #221F20;
+    font-weight: 700;
+    font-size: 2.8rem;
+ }
+ #nav-links{
+    float: right;
+ }
+ #nav-links .nav-item{
+    float: left;
+    margin: 0.5rem;
+
+ }
+ #nav-links .nav-link{
+    color: #221F20 ;
+    font-size: 1.6rem;
+    font-weight: 700;
+    display: block;
+    padding: 1.6rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.4s;
+ }
+ #nav-links .nav-link:hover{
+    color: #FFB300;
+ }
+ header{
+    background-color: #FDBC00 ;
+    height: 700px;
+    /* yukaridaki nav barin altinda kalmamasi nev barin piksel
+    degerine baktik 106 idi buna ek olarak bir padding degeri
+    vermek istedigimizde bu yapiyi kullaniyoruz */
+    padding-top: calc(106px + 7rem);
+    text-align: center;
+ }
+ header h1{
+    color: #423C3C;
+    font-size: 6rem;
+ }
+ header h2{
+    color:#423C3C ;
+    font-size: 2.4rem;
+    font-family: "Lato";
+    font-weight: 300;
+
+ }
+ hr.star-light{
+    border-color:#423C3C ;
+ }
+ hr.star-dark{
+    border-color:#FDBC00 ;
+ }
+ .star-light, .star-dark {
+    border: none;
+    border-top: 0.4rem solid  ;
+    border-radius: 10px;
+    max-width: 25rem;
+    margin: 2.5rem auto;
+    /* sembolun gorunmeyen kismi oldugu icin bu yolla gorunur
+    yaptik */
+    overflow: visible;
+    /* çizgi sembolun yuksekligiyle dengelenmek icin kenarlari
+    kivrilmisti bunu onlemek icin yaptik */
+    height: 0;
+  
+ }
+ .star-light::after{
+    color: #423C3C;
+    background-color:#FDBC00 ;
+ }
+ .star-dark::after{
+    color: #FDBC00;
+    background-color:white;
+ }
+ .star-light::after, .star-dark::after {
+    content: "\20BA";
+    font-weight:900 ;
+    font-size: 3.2rem;
+    position: relative;
+    /* sembol suan 0 konumunnda ve onu yukari tasimak istedigimiz
+    icin eksi top yapiyoruz */
+    top: -28px;
+    padding: 0 8px;
+  
+
+  /*giriş rename oldu internet bankacılığı olarak fakat 
+  güncellenmedi*/  
+ }
+ #giris{
+ 
+
+ }
+ #giris h2{
+    font-size: 4rem;
+    color: #FDBC00;
+
+ }
+ .img-fluid-g{
+    max-width: 100%;
+    height: auto;
+ }
+ .col{
+    float: left;
+    width: 33.333%;
+    padding: 10px;
+
+    /* margin-left: 375px;
+     */
+ }
+ /* asagidaki iki islemde resmin ustune resim gelebilmesi icin
+ yapildi */
+  .giris-item{
+    position: relative;
+  } 
+
+  .giris-item img{
+    display: block;
+    border-radius: 13px;
+  }
+ .img-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    width: 165px;
+    background-color:#FDBC00 ;
+    opacity: 0;
+    transition: opacity 0.4s ;
+ }
+ .img-overlay .icon{
+    color: #433D3C;
+    font-size: 7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* iconu resmin ortasina almak icin */
+    transform: translate(-50%, -50%);
+  
+
+ }
+ .giris-item:hover .img-overlay{
+    /* fare resmin ustune geldiginde alttan gorselin az da olsa 
+    gorunmesi icin opacity degeri verdik */
+    opacity: 0.8;
+    /* responsive ozelligini devreye aldigimizda da  border-radius 
+    degismesin diye px cinsinden verdik */
+    border-radius: 13px;
+ }
+
+ /*about*/
+
+ #about{
+    background-color:#F6EFE9 ;
+    color: #FDBC00;
+ }
+ #about h2{
+    font-size: 4.8rem;
+ }
+ #about-text{
+    text-align: left;
+ }
+ #about-text .left{
+    float: left;
+    width: 50%;
+    padding-right: 2rem;
+    padding-left: 23rem;
+ }
+ #about-text .right{
+    float: right;
+    width: 50%;
+    padding-right: 23rem;
+    padding-left: 2rem;
+ }
+ #about-text .text{
+    font-size: 2rem;
+ }
